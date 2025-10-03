@@ -1,0 +1,122 @@
+﻿
+
+Active Incıdents
+
+
+curl --location 'https://XXXXXX' \
+--header 'Accept: application/json' \
+--header 'Authorization: XXXXXXX' \
+--header 'Content-Type: application/json' \
+--data '{
+     "id": "active-incidents-by-type",
+    "name": "Active Incidents - Pie chart",
+    "dataType": "incidents",
+    "widgetType": "bar",
+    "query": "-category:job and -status:archived and -status:closed and owner:csoc1",
+    "dateRange": {
+        "period": {
+            "by": "day",
+            "fromValue": 7,
+            "toValue": 0
+        }
+    },
+    "params": {
+        "groupBy": [
+            "severity"
+        ]
+    },
+    "category": ""
+}'
+
+
+
+
+
+Closed Incıdents by Type
+
+
+curl --location 'https://XXXXXX'\
+--header 'Accept: application/json' \
+--header 'Authorization: XXXXXX \
+--header 'Content-Type: application/json' \
+--data '{
+     "id": "closed-incidents-by-role",
+    "name": "Closed Incidents by Role",
+    "dataType": "incidents",
+    "widgetType": "bar",
+    "query": "status:closed and owner:csoc1",
+    "dateRange": {
+        "period": {
+            "by": "day",
+            "fromValue": 7,
+            "toValue": 0
+        }
+    },
+    "params": {
+        "groupBy": [
+            "type"
+        ]
+    },
+    "category": ""
+}'
+
+
+
+Active Incident Types by Severity
+
+curl --location 'https://XXXXXX' \
+--header 'Accept: application/json' \
+--header 'Authorization: XXXXXX \
+--header 'Content-Type: application/json' \
+--data '{
+     "id": "incident-types-by-severity",
+    "name": "Incident Types by Severity",
+    "dataType": "incidents",
+    "widgetType": "bar",
+    "query": "-category:job and -status:archived and -status:closed and owner:csoc1",
+    "dateRange": {
+        "period": {
+            "by": "day",
+            "fromValue": 7,
+            "toValue": 0
+        }
+    },
+    "params": {
+        "groupBy": [
+                "rawType",
+                "severity"
+        ]
+    },
+    "category": ""
+}'
+
+
+
+
+Active Indicators by Verdict
+
+
+curl --location 'https://XXXXXX ' \
+--header 'Accept: application/json' \
+--header 'Authorization: XXXXXX \
+--header 'Content-Type: application/json' \
+--data '{
+     "id": "active-indicators-by-verdict",
+    "name": "Active Indicators by Verdict",
+    "dataType": "indicators",
+    "widgetType": "pie",
+    "query": "(expirationStatus:active or expirationStatus:\"\")",
+    "dateRange": {
+        "period": {
+            "by": "day",
+            "fromValue": 7,
+            "toValue": 0
+        }
+    },
+    "params": {
+        "groupBy": [
+                "score"
+        ]
+    },
+    "category": ""
+}'
